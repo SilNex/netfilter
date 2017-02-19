@@ -12,7 +12,7 @@ int ifdrop = NF_ACCEPT;
 
 void dump(unsigned char* buf, int len){
     unsigned char http[4] = "HTTP";
-    unsigned char filter[6] = "gilgil";
+    unsigned char filter[17] = "Host: www.sex.com";
     unsigned char flag=0;   // find "HTTP"
     unsigned char flag2=0;  // find "filter"
     int Domain = 0;   // Find Domain
@@ -27,7 +27,7 @@ void dump(unsigned char* buf, int len){
     } else { return;}
 
     if(flag == 4){
-        for(int a = Domain + 10; a < Domain + 32; a++){
+        for(int a = Domain + 6; a < Domain + 32; a++){
             if(buf[a] == filter[flag2]){
                 flag2++;
             }
